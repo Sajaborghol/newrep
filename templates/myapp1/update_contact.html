@@ -1,0 +1,7 @@
+<!-- myapp3/update_contact.html -->
+<h2>Update Contact</h2>
+<form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <input type="submit" value="Update Contact">
+</form>

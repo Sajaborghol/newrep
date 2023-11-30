@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Contact List</title>
+</head>
+<body>
+    <h1>Contact List</h1>
+    <ul>
+        {% for contact in contacts %}
+            <li>Name: {{ contact.name }}</li>
+            <li>Address: {{ contact.address }}</li>
+            <li>Profession: {{ contact.profession }}</li>
+            <li>Telephone Number: {{ contact.tel_number }}</li>
+            <li>Email Address: {{ contact.email_address }}</li>
+            <li>
+                <a href="{% url 'update_contact' contact.id %}">Update</a> |
+                <a href="{% url 'delete_contact' contact.id %}">Delete</a>
+
+            </li>
+            <br>
+        {% endfor %}
+    </ul>
+    <a href="{% url 'home' %}">Create a New Contact</a>
+</body>
+</html>
